@@ -1,0 +1,26 @@
+{% extends 'main.html' %}
+{% block title %}Contacto{% endblock %}
+{% block content %}
+<div class="bg-body-tertiary p-5 rounded">
+    <h1>Contacto</h1>
+    <p class="lead">Llene el siguiente formulario</p>
+<form action="/contacto" method="POST"></form>
+
+    <div class="mb-3">
+        <input type="text" class="form-control" id="nombre" placeholder="Nombre" required>
+    </div>
+
+    <div class="mb-3">
+        <input type="email" class="form-control" id="email" placeholder="Correo Electronico" required>
+    </div>
+
+    <div>
+        <label for="mensaje">Mensaje:</label><br>
+        <textarea id="mensaje" name="mensaje" rows="5" required></textarea><br><br>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Enviar</button>
+
+</form>
+</div>
+{% endblock %}
