@@ -13,17 +13,17 @@ public class Usuarios {
     String nombre;
     String apellido;
     String username;
-    String password;
+    String clave;
     String tipo;
     
        // Método para verificar las credenciales del usuario
-    public boolean verificarCredenciales(String pUsername, String pPassword) {
+    public boolean verificarCredenciales(String pUsername, String pClave) {
         Conector db = new Conector();
         
         try {
             db.Conectar();
-            String query = "SELECT * FROM usuarios WHERE username = ? AND password = ?";
-            ResultSet rs = db.executeSelect(query, pUsername, pPassword);
+            String query = "SELECT * FROM usuarios WHERE username = ? AND clave = ?";
+            ResultSet rs = db.executeSelect(query, pUsername, pClave);
             return rs.next();
             
         }catch (SQLException e) {
